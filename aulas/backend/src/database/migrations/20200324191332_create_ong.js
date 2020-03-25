@@ -1,6 +1,5 @@
-
-exports.up = function(knex) { //Responsável pela criação da tabela
-  return knex.schema.createTable('ongs', function(table){
+exports.up = function(knex) {
+  return knex.schema.createTable('ongs', function(table) {
     table.string('id').primary();
     table.string('name').notNullable();
     table.string('email').notNullable();
@@ -10,6 +9,6 @@ exports.up = function(knex) { //Responsável pela criação da tabela
   });
 };
 
-exports.down = function(knex) {//Se der problema, desfazer
+exports.down = function(knex) {
   return knex.schema.dropTable('ongs');
 };
